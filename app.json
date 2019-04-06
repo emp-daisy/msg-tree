@@ -1,0 +1,19 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "env": {
+    "DATABASE_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "name": "msg-tree",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
