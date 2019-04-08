@@ -32,6 +32,8 @@ input EditMessageInput {
   text: String
   status: String
 }
+
+# This are the Queries for our project
 type Query {
   # Contacts
   contactById(id: String!): Contact
@@ -41,6 +43,8 @@ type Query {
   messageById(id: String!): [Message]
   messageByContact(mobile: String!): [Message]
 }
+
+# This are the Mutation for our project
 type Mutation {
   # Contacts
   addContact(input: NewContactInput): Contact

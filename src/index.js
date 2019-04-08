@@ -1,5 +1,8 @@
-import app from './src/app';
-import { connection } from './src/models';
+import dotenv from 'dotenv'
+import app from './app';
+import { connection } from './models';
+
+dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 

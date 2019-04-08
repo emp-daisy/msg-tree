@@ -1,6 +1,6 @@
 import _, { pickBy, identity } from 'lodash';
 import models from "../models";
-import { isNotObjectId } from "./validation";
+import { isNotObjectId, isNotPhoneNumber } from "./validation";
 const { Contact } = models;
 
 const ContactResolver = {
@@ -20,6 +20,7 @@ const ContactResolver = {
     return contact;
   },
   addContact: async ({ input: { mobile, name } }) => {
+    if (isNotPhoneNumber(mobile)) throw new Error("Invalid mobile number. Must be length 10-11 starting with 0");
     let contact = await Contact.findOne({ mobile });
     if(contact) throw new Error("Contact already exist");
 

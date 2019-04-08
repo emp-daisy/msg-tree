@@ -12,14 +12,6 @@ const contactSchema = new mongoose.Schema({
   },
 });
 
-contactSchema.statics.findByNumber = async function (phone) {
-  let contact = await this.findOne({
-    mobile: phone,
-  });
-
-  return contact;
-};
-
 contactSchema.pre('remove', function(next) {
   this.model('Message').deleteMany({
     $or: [
